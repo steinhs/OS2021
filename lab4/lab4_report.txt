@@ -1,0 +1,26 @@
+- - Lab 4 Report: Stein Hanssen Sæstad - -
+
+Exercise
+
+3.1	
+Lab4.c print_message() generates a random number and modulo it with 5 to get a number between 0-4.
+It then prints out the message on N index in message[].
+
+3.2
+The issue is that malloc is not able to allocate the memory needed from the system, resulting in it returning null.
+Reducing malloc(1<<31) to (1<30) fixes the problem and the program will get the required memory.
+This could also be reduced further.
+
+3.3
+Why does the program not work properly?
+- The issue seems to be with how getline() stores the input in memory, which is why
+we have to use a pointer to our string[] so that we can access the value.
+
+Fixes:
+- "You entered the %d character line: %s", n". Changed "n" to "n-1" to offset getline() returning delimiter character.
+- Changed for loops from "i<=length" to "i<length" to make 10 random characters, not 11.
+- Changed rand_array to [9].
+- Changed string to string[32] and *str.
+- Changed "j" to 32 to get correct buffer-size.
+
+Note: Could have used a condition check for memory, but didn't seem to be too important in the task.

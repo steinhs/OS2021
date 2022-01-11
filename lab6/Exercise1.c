@@ -1,0 +1,40 @@
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+
+/* The following function is run by the second thread */
+void *Increase(void *a_void_ptr){
+    /* Increase a to 100 */
+    int *a_ptr = (int *)a_void_ptr;
+
+    // YOUR CODE HERE
+    while (*a_ptr != 100)
+        *a_ptr += 1;
+    printf("Increasing a finished thanks to the second thread!\n");
+}
+
+int main(){
+    int a = 0, b = 1000, errorThread;
+
+    /* Show the initial values of a and b */
+    printf("Initial values: a = %d, b = %d\n", a, b);
+
+    /* Variable for the second thread */
+    pthread_t increaseThread;
+
+    // YOUR CODE HERE
+    errorThread = pthread_create(&increaseThread, NULL, (void *)Increase, &a);
+    if (errorThread){
+        printf("ERROR CREATING THREAD");
+        exit(-1);
+    }
+
+    while (b != 100)
+        b--;
+    printf("Decreasing b finished thanks to the main thread!\n");
+    pthread_join(increaseThread, NULL);
+
+    printf("Final values: a= %d, b= %d\n", a, b);
+    return 0;
+}

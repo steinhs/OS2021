@@ -1,0 +1,34 @@
+2 Exercises
+2.1 
+" Cat file1 file2 file3 | grep cat "
+- Prints rows/lines from file1-3 that contains the word "cat". If used with lab1_report.txt, then the first line that would show is the third one (" Cat file1... ").
+
+" Who | wc -l > file1.txt "
+- Prints the number-amount of users on the server to file1.txt. Not a command you want to use on the text file your assignment is on, trust me :^).
+
+" Sort < file1.txt > file2.txt "
+- Copies the content from file1 to file2 and sorts the rows based off first letter/number. Sorts by number, capital letter, lower letter.
+
+" Ps | wc -l "
+- Displays active processes and prints to terminal.
+
+2.2
+" rm -rf foldername " can be used to remove a directory/folder and all its contents. " rmdir " will only delete an empty folder.
+
+2.3
+2.3.1 
+rmdir - removes an empty folder/directory.
+
+mv - Moves one or more files or folder to another destination.
+
+cp - Copies a file or folder to another destination.
+
+less - Reads content of a file one page at a time. Quicker to use on larger files as it only opens one page at a time.
+
+pushd - Adds the selected directory to a working stack and becomes the working directory. You can then add another directory with "pushd" which will become your working directory. Uses Last in, First out stack principle.
+
+popd - Removes working directory from the top and places you in the next directory on the "pushd" stack.
+
+2.3.2
+" Man ls " to learn more about the ls command, or any other command.
+

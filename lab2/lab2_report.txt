@@ -1,0 +1,3 @@
+Exercises -
+3.
+Running the program with testcase1.txt results in segmentation fault. This because when declaring the array we get a stack overflow as the array of that size can't fit in our programs stack address space.
